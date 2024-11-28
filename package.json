@@ -1,0 +1,82 @@
+{
+  "name": "@snackbarbs/snackbar",
+  "version": "1.0.0",
+  "description": "Highly customizable notification snackbars (toasts) that can be stacked on top of each other.",
+  "keywords": [
+    "enqueueSnackbar",
+    "snackbarbs",
+    "hossein",
+    "javascript",
+    "material design",
+    "material-ui",
+    "multiple",
+    "notification",
+    "react",
+    "redux",
+    "snackbar",
+    "snackbarprovider",
+    "stacked",
+    "toast",
+    "useSnackbar"
+  ],
+  "main": "./index.js",
+  "module": "./snackbar.esm.js",
+  "types": "./index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "npm run docs",
+    "build": "tsdx build --entry ./src/index.ts",
+    "watch": "tsdx watch --transpileOnly --entry ./src/index.ts",
+    "docs": "rimraf typedoc.json && typedoc --tsconfig",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "test": "echo todo-test",
+    "copy": "cp package.json README.md LICENSE dist",
+    "prerelease": "npm run build && npm run copy",
+    "postversion": "npm run copy",
+    "release": "npm run prerelease && np --tag latest",
+    "prettier": "prettier --write ."
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "dependencies": {
+    "clsx": "^1.1.0",
+    "goober": "^2.0.33"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.8.3",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "babel-plugin-optimize-clsx": "^2.6.1",
+    "eslint": "^7.7.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.30.0",
+    "np": "^7.6.1",
+    "prettier": "^3.3.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "rimraf": "^3.0.2",
+    "rollup-plugin-bundle-size": "^1.0.3",
+    "rollup-plugin-copy": "^3.3.0",
+    "tsdx": "^0.13.2",
+    "tslib": "^2.1.0",
+    "typedoc": "^0.16.11",
+    "typescript": "^4.2.4"
+  },
+  "author": "snackbarbs",
+  "np": {
+    "branch": "master",
+    "yarn": false,
+    "contents": "./dist",
+    "message": "v%s",
+    "releaseDraft": false
+  },
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=6.0.0"
+  }
+}
